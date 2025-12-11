@@ -142,6 +142,18 @@
       </button>
     </form>
 
+    <button
+        class="msc-btn msc-btn--secondary"
+        type="button"
+        (click)="openDepositPayment()"
+    >
+        Pay party deposit online
+    </button>
+    <p class="msc-muted-small">
+        This will open a secure payment page where you can pay your deposit.
+    </p>
+
+
     <div class="msc-party-summary" *ngIf="partySummaryVisible">
       <h4>Your party plan</h4>
       <ul>

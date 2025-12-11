@@ -12,6 +12,8 @@ type PartyPackageType = 'cupcake' | 'cookie';
   styleUrl: './parties.scss'
 })
 export class Parties {
+  cupcakeDepositUrl = 'https://buy.stripe.com/test_5kQ14n8WX0q10cT6ww3sI01'
+  cookieDepositUrl = 'https://buy.stripe.com/test_6oU28rfll6OpgbRf323sI00'
   partyThemes: string[] = [
     'Barbie Dream Party',
     'Lilo & Stitch Beach Party',
@@ -58,5 +60,14 @@ export class Parties {
 
   onSubmitPartyForm(): void {
     this.partySummaryVisible = true;
+  }
+
+  openDepositPayment(): void {
+    const url =
+      this.party.packageType === 'cupcake'
+        ? this.cupcakeDepositUrl
+        : this.cookieDepositUrl;
+
+    window.open(url, '_blank'); // open in new tab
   }
 }
