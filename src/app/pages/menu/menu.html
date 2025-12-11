@@ -1,0 +1,80 @@
+<section class="msc-section msc-section--menu">
+  <div class="msc-section-heading">
+    <h2>Menu</h2>
+    <p>
+      Choose from cakes, cupcakes, cookies, and espresso. All your favorites,
+      with flavors: vanilla, chocolate, red velvet, carrot — plus cozy cookie
+      and coffee options.
+    </p>
+
+    <div class="msc-menu-tabs">
+      <button
+        class="msc-pill"
+        [class.msc-pill--active]="activeMenuTab === 'cakes'"
+        type="button"
+        (click)="selectMenuTab('cakes')"
+      >
+        Cakes
+      </button>
+      <button
+        class="msc-pill"
+        [class.msc-pill--active]="activeMenuTab === 'cupcakes'"
+        type="button"
+        (click)="selectMenuTab('cupcakes')"
+      >
+        Cupcakes
+      </button>
+      <button
+        class="msc-pill"
+        [class.msc-pill--active]="activeMenuTab === 'cookies'"
+        type="button"
+        (click)="selectMenuTab('cookies')"
+      >
+        Cookies
+      </button>
+      <button
+        class="msc-pill"
+        [class.msc-pill--active]="activeMenuTab === 'espresso'"
+        type="button"
+        (click)="selectMenuTab('espresso')"
+      >
+        Espresso
+      </button>
+    </div>
+  </div>
+
+  <!-- Cakes -->
+  <div class="msc-menu-grid" *ngIf="activeMenuTab === 'cakes'">
+    <article class="msc-card" *ngFor="let item of menu.cakes.items">
+      <h3>{{ item.name }}</h3>
+      <p class="msc-chip" *ngIf="item.flavor">Flavor: {{ item.flavor }}</p>
+      <p>{{ item.description }}</p>
+    </article>
+  </div>
+
+  <!-- Cupcakes -->
+  <div class="msc-menu-grid" *ngIf="activeMenuTab === 'cupcakes'">
+    <article class="msc-card" *ngFor="let item of menu.cupcakes.items">
+      <h3>{{ item.name }}</h3>
+      <p class="msc-chip" *ngIf="item.flavor">Flavor: {{ item.flavor }}</p>
+      <p>{{ item.description }}</p>
+    </article>
+  </div>
+
+  <!-- Cookies -->
+  <div class="msc-menu-grid" *ngIf="activeMenuTab === 'cookies'">
+    <article class="msc-card" *ngFor="let item of menu.cookies.items">
+      <h3>{{ item.name }}</h3>
+      <p class="msc-chip" *ngIf="item.flavor">Flavor: {{ item.flavor }}</p>
+      <p>{{ item.description }}</p>
+    </article>
+  </div>
+
+  <!-- Espresso -->
+  <div class="msc-menu-grid" *ngIf="activeMenuTab === 'espresso'">
+    <article class="msc-card" *ngFor="let item of menu.espresso.items">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+    </article>
+  </div>
+</section>

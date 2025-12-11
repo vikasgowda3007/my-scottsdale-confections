@@ -1,0 +1,171 @@
+<section class="msc-section msc-section--parties">
+  <div class="msc-section-heading">
+    <h2>Kids parties for ages 5–12</h2>
+    <p>
+      Two fun packages: kids can make their own cupcake or design their own
+      cookie. Each party includes
+      <strong>12 {{ selectedPartyTreatLabel }}</strong> plus sprinkles and
+      accessories.
+    </p>
+  </div>
+
+  <div class="msc-party-grid">
+    <article class="msc-card msc-party-card">
+      <h3>Make Your Own Cupcake Party</h3>
+      <p class="msc-party-age">Ages 5–12 • up to 12 guests</p>
+      <ul class="msc-checklist">
+        <li>🧁 12 freshly baked vanilla or chocolate cupcakes.</li>
+        <li>🍥 Pastel frosting in piping bags.</li>
+        <li>🌈 Sprinkles and cute cupcake toppers.</li>
+      </ul>
+      <button
+        class="msc-btn msc-btn--primary"
+        type="button"
+        (click)="selectPackage('cupcake')"
+      >
+        Customize cupcake party
+      </button>
+    </article>
+
+    <article class="msc-card msc-party-card">
+      <h3>Design Your Own Cookie Party</h3>
+      <p class="msc-party-age">Ages 5–12 • up to 12 guests</p>
+      <ul class="msc-checklist">
+        <li>🍪 12 cookies (yellow, chocolate chip, red velvet, or oatmeal).</li>
+        <li>🖌 Icing, sprinkles, and cookie decorations.</li>
+        <li>🎀 Themed accessories to match your party idea.</li>
+      </ul>
+      <button
+        class="msc-btn msc-btn--secondary"
+        type="button"
+        (click)="selectPackage('cookie')"
+      >
+        Customize cookie party
+      </button>
+    </article>
+  </div>
+
+  <!-- Party Builder -->
+  <div class="msc-card msc-party-builder">
+    <h3>Customize theme & materials</h3>
+    <p class="msc-muted">
+      Use this tool to plan how many cupcakes or cookies you need, plus
+      accessories for themes like Barbie, Lilo &amp; Stitch, or Disney
+      Princesses. You can use the summary to decide your pricing and shopping
+      list.
+    </p>
+
+    <form (ngSubmit)="onSubmitPartyForm()" #partyForm="ngForm" novalidate>
+      <div class="msc-form-row">
+        <label class="msc-label">Party package</label>
+        <div class="msc-chip-row">
+          <button
+            type="button"
+            class="msc-chip-button"
+            [class.msc-chip-button--active]="party.packageType === 'cupcake'"
+            (click)="selectPackage('cupcake')"
+          >
+            🧁 Make your own cupcake
+          </button>
+          <button
+            type="button"
+            class="msc-chip-button"
+            [class.msc-chip-button--active]="party.packageType === 'cookie'"
+            (click)="selectPackage('cookie')"
+          >
+            🍪 Design your own cookie
+          </button>
+        </div>
+      </div>
+
+      <div class="msc-form-row">
+        <label for="theme" class="msc-label">Theme</label>
+        <select
+          id="theme"
+          class="msc-input"
+          name="theme"
+          [(ngModel)]="party.theme"
+        >
+          <option *ngFor="let theme of partyThemes" [value]="theme">
+            {{ theme }}
+          </option>
+        </select>
+        <p class="msc-muted-small">
+          Examples: Barbie, Lilo &amp; Stitch, Disney Princess, or your own
+          idea.
+        </p>
+      </div>
+
+      <div class="msc-form-row msc-form-row--split">
+        <div class="msc-form-field">
+          <label for="kids" class="msc-label">Number of kids</label>
+          <input
+            id="kids"
+            type="number"
+            class="msc-input"
+            name="kids"
+            min="1"
+            max="30"
+            [(ngModel)]="party.kids"
+          />
+          <p class="msc-muted-small">
+            Each party includes 12 {{ selectedPartyTreatLabel }} by default.
+          </p>
+        </div>
+
+        <div class="msc-form-field">
+          <label for="date" class="msc-label">Preferred date</label>
+          <input
+            id="date"
+            type="date"
+            class="msc-input"
+            name="date"
+            [(ngModel)]="party.date"
+          />
+        </div>
+      </div>
+
+      <div class="msc-form-row">
+        <label for="notes" class="msc-label">Notes & accessories list</label>
+        <textarea
+          id="notes"
+          class="msc-textarea"
+          rows="3"
+          name="notes"
+          placeholder="Barbie cupcake rings, pink sprinkles, princess plates..."
+          [(ngModel)]="party.notes"
+        ></textarea>
+      </div>
+
+      <button class="msc-btn msc-btn--primary" type="submit">
+        Preview party summary
+      </button>
+    </form>
+
+    <div class="msc-party-summary" *ngIf="partySummaryVisible">
+      <h4>Your party plan</h4>
+      <ul>
+        <li><strong>Package:</strong> {{ selectedPartyPackageLabel }}</li>
+        <li><strong>Theme:</strong> {{ party.theme }}</li>
+        <li><strong>Kids attending:</strong> {{ party.kids }}</li>
+        <li>
+          <strong>Included treats:</strong>
+          {{ includedTreats }} {{ selectedPartyTreatLabel }}
+        </li>
+        <li *ngIf="extraTreatsNeeded > 0">
+          <strong>Extra treats needed:</strong>
+          {{ extraTreatsNeeded }} more {{ selectedPartyTreatLabel }} (plan
+          ingredients &amp; accessories).
+        </li>
+        <li *ngIf="party.date">
+          <strong>Preferred date:</strong> {{ party.date }}
+        </li>
+      </ul>
+      <p *ngIf="party.notes"><strong>Notes:</strong> {{ party.notes }}</p>
+      <p class="msc-muted-small">
+        Pricing is up to you — use this summary to calculate your package price
+        and shopping list.
+      </p>
+    </div>
+  </div>
+</section>

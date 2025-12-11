@@ -1,0 +1,90 @@
+<section class="msc-hero">
+  <div class="msc-hero-grid">
+    <div class="msc-hero-text">
+      <p class="msc-hero-kicker">Scottsdale • AZ • Community‑powered</p>
+      <h1>Bubble‑cute sweets baked with stories & volunteers.</h1>
+      <p class="msc-hero-sub">
+        My Scottsdale Confections is where cupcakes, cookies, cakes, and
+        espresso meet community — from volunteer bake days to kid‑powered party
+        packages.
+      </p>
+
+      <div class="msc-hero-actions">
+        <a class="msc-btn msc-btn--primary" routerLink="/menu">View the menu</a>
+        <a class="msc-btn msc-btn--ghost" routerLink="/parties"
+          >Plan a kids party</a
+        >
+      </div>
+
+      <div class="msc-hero-badges">
+        <span>✨ Volunteer‑friendly</span>
+        <span>🌵 Scottsdale local</span>
+        <span>🧁 Parties for ages 5–12</span>
+      </div>
+    </div>
+
+    <aside class="msc-hero-card">
+      <h2>Today’s sweet highlights</h2>
+      <ul>
+        <li *ngFor="let highlight of menuHighlights">
+          <span class="msc-highlight-name">{{ highlight.name }}</span>
+          <span class="msc-highlight-tag">{{ highlight.category }}</span>
+        </li>
+      </ul>
+      <p class="msc-hero-note">
+        Mix & match cupcakes, cookies, and cakes — and pair them with your
+        favorite espresso drinks.
+      </p>
+      <p class="msc-hero-note">
+        Want to hear our story?
+        <a routerLink="/volunteer">Read more about our volunteers.</a>
+      </p>
+    </aside>
+  </div>
+</section>
+
+<section class="msc-section">
+  <div class="msc-section-heading">
+    <h2>Stories from the bakery</h2>
+    <p>
+      My Scottsdale Confections is filled with little moments: first birthdays,
+      school celebrations, and cookie‑decorating afternoons with friends.
+      Capture all those stories right here.
+    </p>
+  </div>
+
+  <div class="msc-story-grid">
+    <article class="msc-card">
+      <h3>From home kitchen to Scottsdale favorite</h3>
+      <p>
+        Start this section with your personal story — how your cupcake business
+        began, what you love to bake, and why Scottsdale feels like home.
+      </p>
+      <p class="msc-muted-small">
+        Tip: add real photos and a few paragraphs about how you grew your
+        business, your favorite recipes, and the people who helped you along
+        the way.
+      </p>
+      <a class="msc-btn msc-btn--ghost" routerLink="/volunteer">
+        Our volunteer story
+      </a>
+    </article>
+
+    <article class="msc-card">
+      <h3>Kids parties that feel like magic</h3>
+      <p>
+        We offer two hands‑on party packages for ages 5–12: make your own
+        cupcake or design your own cookie. Kids get creative with frosting,
+        sprinkles, and themed decorations.
+      </p>
+      <ul class="msc-checklist">
+        <li>🧁 12 cupcakes or cookies included in each package.</li>
+        <li>🌈 Sprinkles and accessories ready to go.</li>
+        <li>🎀 Themes like Barbie, Lilo &amp; Stitch, Disney Princess, & more.</li>
+      </ul>
+      <a class="msc-btn msc-btn--primary" routerLink="/parties">
+        Explore party packages
+      </a>
+    </article>
+  </div>
+</section>
