@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/my-scottsdale-confections": {},
+    "/my-scottsdale-confections/contact": {},
+    "/my-scottsdale-confections/menu": {},
+    "/my-scottsdale-confections/parties": {},
+    "/my-scottsdale-confections/volunteer": {}
+  }
+}
