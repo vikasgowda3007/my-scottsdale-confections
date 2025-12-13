@@ -1,0 +1,74 @@
+.msc-thankyou-card {
+  text-align: center;
+  padding-top: 2.5rem;
+}
+
+.msc-jumping-cupcake {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  animation: msc-cupcake-bounce 1s ease-in-out infinite;
+}
+
+.msc-cupcake-top {
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 55px;
+  background: radial-gradient(circle at 30% 20%, #ffffff, #ffeaf1);
+  border-radius: 90px 90px 40px 40px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.msc-cupcake-base {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  width: 85px;
+  height: 55px;
+  background: linear-gradient(135deg, var(--msc-pink), var(--msc-peach));
+  border-radius: 10px 10px 20px 20px;
+}
+
+.msc-cupcake-sprinkle {
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.msc-cupcake-sprinkle--1 {
+  top: 26%;
+  left: 38%;
+  transform: rotate(15deg);
+}
+
+.msc-cupcake-sprinkle--2 {
+  top: 30%;
+  left: 52%;
+  transform: rotate(-20deg);
+}
+
+.msc-cupcake-sprinkle--3 {
+  top: 34%;
+  left: 46%;
+  transform: rotate(30deg);
+}
+
+@keyframes msc-cupcake-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}

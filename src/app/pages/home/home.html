@@ -1,45 +1,79 @@
 <section class="msc-hero">
   <div class="msc-hero-grid">
+    <!-- LEFT: inclusive, community-focused copy -->
     <div class="msc-hero-text">
-      <p class="msc-hero-kicker">Scottsdale • AZ • Community‑powered</p>
-      <h1>Bubble‑cute sweets baked with stories & volunteers.</h1>
+      <p class="msc-hero-kicker">Scottsdale • Kid‑friendly bakery bus</p>
+      <h1>Welcome to a sprinkle‑friendly kitchen where every kid belongs.</h1>
+
       <p class="msc-hero-sub">
-        My Scottsdale Confections is where cupcakes, cookies, cakes, and
-        espresso meet community — from volunteer bake days to kid‑powered party
-        packages.
+        My Scottsdale Confections is a bakery created for kids and families to
+        come in, decorate, make a little mess, and feel at home. We invite kids
+        into the “kitchen” experience so they can mix, frost, and create.
+      </p>
+
+      <p class="msc-hero-sub">
+        All kids are welcome — including autistic and neurodivergent kids —
+        with patient staff, flexible party options, and space for quiet breaks
+        when anyone needs them.
+      </p>
+
+      <p class="msc-hero-sub">
+        A portion of every party and pop‑up goes back to local schools and
+        community programs in Scottsdale, so each cupcake helps our neighbors.
       </p>
 
       <div class="msc-hero-actions">
-        <a class="msc-btn msc-btn--primary" routerLink="/menu">View the menu</a>
-        <a class="msc-btn msc-btn--ghost" routerLink="/parties"
-          >Plan a kids party</a
-        >
+        <a class="msc-btn msc-btn--primary" routerLink="/menu">
+          Explore the menu
+        </a>
+        <a class="msc-btn msc-btn--ghost" routerLink="/parties">
+          Plan a kids party
+        </a>
       </div>
 
       <div class="msc-hero-badges">
-        <span>✨ Volunteer‑friendly</span>
-        <span>🌵 Scottsdale local</span>
-        <span>🧁 Parties for ages 5–12</span>
+        <span>🤝 Giving back to the community</span>
+        <span>🧁 Hands‑on baking fun</span>
+        <span>💖 All kids welcome</span>
       </div>
     </div>
 
-    <aside class="msc-hero-card">
-      <h2>Today’s sweet highlights</h2>
-      <ul>
-        <li *ngFor="let highlight of menuHighlights">
-          <span class="msc-highlight-name">{{ highlight.name }}</span>
-          <span class="msc-highlight-tag">{{ highlight.category }}</span>
-        </li>
-      </ul>
-      <p class="msc-hero-note">
-        Mix & match cupcakes, cookies, and cakes — and pair them with your
-        favorite espresso drinks.
-      </p>
-      <p class="msc-hero-note">
-        Want to hear our story?
-        <a routerLink="/volunteer">Read more about our volunteers.</a>
-      </p>
-    </aside>
+    <!-- RIGHT: photo + popular sells -->
+    <div class="msc-hero-right">
+      <div class="msc-hero-photo">
+        <!-- place an actual image at public/images/kids-baking.jpg -->
+        <img
+          src="images/kids-baking.jpg"
+          alt="Kids decorating cupcakes together in a warm, kid-friendly bakery kitchen."
+        />
+      </div>
+
+      <aside class="msc-hero-card">
+        <h2>Popular sells</h2>
+        <p class="msc-muted-small">
+          This list reads from a simple flat file so you can update it any time
+          without changing code.
+        </p>
+
+        <ng-container *ngIf="!loadingHighlights; else loadingState">
+          <ul>
+            <li *ngFor="let highlight of menuHighlights">
+              <span class="msc-highlight-name">{{ highlight.name }}</span>
+              <span class="msc-highlight-tag">{{ highlight.category }}</span>
+            </li>
+          </ul>
+        </ng-container>
+
+        <ng-template #loadingState>
+          <p class="msc-muted-small">Loading today’s popular sweets…</p>
+        </ng-template>
+
+        <p class="msc-hero-note">
+          Edit <code>public/data/popular-sweets.json</code> to change what
+          appears here.
+        </p>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -73,7 +107,7 @@
     <article class="msc-card">
       <h3>Kids parties that feel like magic</h3>
       <p>
-        We offer two hands‑on party packages for ages 5–12: make your own
+        We offer two hands‑on party packages for ages 8–12: make your own
         cupcake or design your own cookie. Kids get creative with frosting,
         sprinkles, and themed decorations.
       </p>

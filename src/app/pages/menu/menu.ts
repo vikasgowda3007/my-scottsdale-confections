@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-type MenuTab = 'cakes' | 'cupcakes' | 'cookies' | 'espresso';
+type MenuTab = 'cupcakes' | 'cookies' | 'espresso';
 
 interface MenuItem {
   name: string;
@@ -23,63 +23,34 @@ interface MenuCategory {
   styleUrl: './menu.scss'
 })
 export class Menu {
-  activeMenuTab: MenuTab = 'cakes';
+  activeMenuTab: MenuTab = 'cupcakes';
 
   menu: {
-    cakes: MenuCategory;
     cupcakes: MenuCategory;
     cookies: MenuCategory;
     espresso: MenuCategory;
   } = {
-    cakes: {
-      title: 'Cakes',
-      tagline: 'Perfect for celebrations big and small.',
-      items: [
-        {
-          name: 'Vanilla Cloud Cake',
-          flavor: 'Vanilla',
-          description: 'Soft vanilla layers with fluffy buttercream swirls.'
-        },
-        {
-          name: 'Scottsdale Chocolate Cake',
-          flavor: 'Chocolate',
-          description: 'Rich chocolate sponge with decadent chocolate frosting.'
-        },
-        {
-          name: 'Red Velvet Love Cake',
-          flavor: 'Red velvet',
-          description:
-            'Classic red velvet with tangy cream cheese frosting and sprinkles.'
-        },
-        {
-          name: 'Carrot Garden Cake',
-          flavor: 'Carrot',
-          description:
-            'Spiced carrot cake with cream cheese frosting and cute toppings.'
-        }
-      ]
-    },
     cupcakes: {
       title: 'Cupcakes',
       tagline: 'Hand‑piped, cute, and party‑ready.',
       items: [
         {
-          name: 'Vanilla Confetti Cupcake',
+          name: 'Vanilla Cupcake',
           flavor: 'Vanilla',
           description: 'Sprinkle‑packed vanilla cupcake with pastel frosting.'
         },
         {
-          name: 'Chocolate Midnight Cupcake',
+          name: 'Chocolate Cupcake',
           flavor: 'Chocolate',
           description: 'Deep chocolate cupcake with fudge swirl.'
         },
         {
-          name: 'Red Velvet Dream Cupcake',
+          name: 'Red Velvet Cupcake',
           flavor: 'Red velvet',
           description: 'Mini version of our red velvet signature cake.'
         },
         {
-          name: 'Carrot Sunshine Cupcake',
+          name: 'Carrot Cupcake',
           flavor: 'Carrot',
           description: 'Carrot cake cupcake with a tiny frosting carrot on top.'
         }
@@ -90,10 +61,10 @@ export class Menu {
       tagline: 'Fresh‑baked, soft centers, gently crisp edges.',
       items: [
         {
-          name: 'Yellow Sugar Cookie',
-          flavor: 'Yellow sugar',
+          name: 'Sugar Cookie',
+          flavor: 'Vanilla',
           description:
-            'Soft yellow cookie, perfect for colorful decorations and icing.'
+            'Soft vanilla cookie, perfect for colorful decorations and icing.'
         },
         {
           name: 'Chocolate Chip Classic',

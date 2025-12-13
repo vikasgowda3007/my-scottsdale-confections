@@ -2,20 +2,12 @@
   <div class="msc-section-heading">
     <h2>Menu</h2>
     <p>
-      Choose from cakes, cupcakes, cookies, and espresso. All your favorites,
+      Choose from cupcakes, cookies, and espresso. All your favorites,
       with flavors: vanilla, chocolate, red velvet, carrot — plus cozy cookie
       and coffee options.
     </p>
 
     <div class="msc-menu-tabs">
-      <button
-        class="msc-pill"
-        [class.msc-pill--active]="activeMenuTab === 'cakes'"
-        type="button"
-        (click)="selectMenuTab('cakes')"
-      >
-        Cakes
-      </button>
       <button
         class="msc-pill"
         [class.msc-pill--active]="activeMenuTab === 'cupcakes'"
@@ -41,15 +33,6 @@
         Espresso
       </button>
     </div>
-  </div>
-
-  <!-- Cakes -->
-  <div class="msc-menu-grid" *ngIf="activeMenuTab === 'cakes'">
-    <article class="msc-card" *ngFor="let item of menu.cakes.items">
-      <h3>{{ item.name }}</h3>
-      <p class="msc-chip" *ngIf="item.flavor">Flavor: {{ item.flavor }}</p>
-      <p>{{ item.description }}</p>
-    </article>
   </div>
 
   <!-- Cupcakes -->

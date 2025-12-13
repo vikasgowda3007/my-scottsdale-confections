@@ -5,19 +5,33 @@
   <div class="msc-bubble msc-bubble--mint"></div>
   <div class="msc-bubble msc-bubble--lavender"></div>
 
+  <!-- sprinkle pop on initial load -->
+  <div class="msc-sprinkles-overlay">
+    <span class="msc-sprinkle msc-sprinkle--1"></span>
+    <span class="msc-sprinkle msc-sprinkle--2"></span>
+    <span class="msc-sprinkle msc-sprinkle--3"></span>
+    <span class="msc-sprinkle msc-sprinkle--4"></span>
+    <span class="msc-sprinkle msc-sprinkle--5"></span>
+    <span class="msc-sprinkle msc-sprinkle--6"></span>
+    <span class="msc-sprinkle msc-sprinkle--7"></span>
+    <span class="msc-sprinkle msc-sprinkle--8"></span>
+  </div>
+
   <!-- HEADER / NAV -->
   <header class="msc-header">
     <div class="msc-header-inner">
+      <!-- full line dedicated to logo/name, centered -->
       <a class="msc-brand" routerLink="/">
         <div class="msc-logo">MSC</div>
         <div class="msc-brand-text">
           <div class="msc-brand-name">My Scottsdale Confections</div>
           <div class="msc-brand-tagline">
-            Cupcakes • Cookies • Cakes • Espresso
+            Rose‑gold cupcakes • cookies • cakes • espresso
           </div>
         </div>
       </a>
 
+      <!-- navigation on its own line -->
       <nav class="msc-nav">
         <a
           routerLink="/"
@@ -42,11 +56,10 @@
   <!-- PAGE CONTENT -->
   <router-outlet></router-outlet>
 
-  <!-- FOOTER -->
   <footer class="msc-footer">
     <p>
-      © {{ currentYear }} My Scottsdale Confections · Baked with
-      sprinkles and stories.
+      © {{ currentYear }} My Scottsdale Confections · Every cupcake
+      helps our Scottsdale community.
     </p>
   </footer>
 </main>
